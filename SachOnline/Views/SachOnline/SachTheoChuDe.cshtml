@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SachOnline.Models.SACH>
+
+
+@{
+    ViewBag.Title = "SachTheoChuDe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Sách Theo Chủ Đề</h2>
+<hr />
+<div class="row text-center">
+@foreach (var sach in Model)
+{
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail">
+            <img src="~/Images/@sach.AnhBia" alt="@sach.TenSach" class="img-responsive img-rounded imgbook" />
+            <div class="caption">
+                <h4 style="min-height: 70px;">
+                    <a href="@Url.Action("ChiTietSach","SachOnline", new { id = sach.MaSach })">@sach.TenSach</a>
+                </h4>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    }
+</div>

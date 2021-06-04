@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap eCommerce Template</title>
+
+
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+        .imgbook {
+            transition: all 1s ease-in;
+            width: 400px;
+        }
+
+            .imgbook:hover {
+                transform: scale(0.9);
+                cursor: pointer;
+            }
+
+        .imgsachbannhieu {
+            width: 100px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <!--navbar-fixed-top-->
+        <div class="container">
+
+            @Html.Action("NavPartial", "SachOnline")
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-->
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                @Html.Action("SliderPartial", "SachOnline")
+
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+                @Html.Action("ChuDePartial", "SachOnline")
+
+                <br>
+
+                @Html.Action("NhaXuatBanPartial", "SachOnline")
+
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+
+                @RenderBody()
+
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container">
+
+        @Html.Action("SachBanNhieuPartial", "SachOnline")
+
+    </div>
+    <footer class="container well" align="center">
+        <p>©2021 - Nhà sách ABC. Allright Reserved</p>
+        <p>Website được phát triển để sử dụng làm bài tập thực hành môn Lập trình Web</p>
+        <p>Email: abc@gmail.com</p>
+        <p>Bùi Trọng Tín</p>
+        <p>1924801030279</p>
+        <p>Email: btrongtin891@gmail.com</p>
+    </footer>
+</body>
+</html>

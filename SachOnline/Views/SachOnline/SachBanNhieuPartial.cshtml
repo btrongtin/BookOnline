@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SachOnline.Models.SACH>
+
+<style type="text/css">
+    .book-preview{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* number of lines to show */
+        -webkit-box-orient: vertical;
+        text-align: justify;
+    }
+</style>
+
+<h2 class="text-center">SÁCH BÁN NHIỀU</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        @*<div class="col-lg-6 col-md-6">
+            <div class="media-object-default">
+                @foreach (var sach in Model)
+                {
+                    <div class="media">
+                        <div class="media-left"> <a href="@Url.Action("BookDetail","SachOnline", new { id = sach.MaSach })"> <img class="media-object imgsachbannhieu" src="~/Images/@sach.AnhBia" alt="placeholder image"> </a> </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@sach.TenSach</h4>
+                            @sach.MoTa
+                        </div>
+                    </div>
+                }    
+            </div>
+        </div>
+        <hr class="hidden-md hidden-lg">
+        <div class="col-lg-6 col-md-6">
+            <div class="media-object-default">
+                @foreach (var sach in Model)
+                {
+                    <div class="media">
+                        <div class="media-left"> <a href="@Url.Action("BookDetail","SachOnline", new { id = sach.MaSach })"> <img class="media-object imgsachbannhieu" src="~/Images/@sach.AnhBia" alt="placeholder image"> </a> </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@sach.TenSach</h4>
+                            @sach.MoTa
+                        </div>
+                    </div>
+                }   
+            </div>
+        </div>*@
+
+        @foreach (var sach in Model)
+        {
+            <div class="col-lg-6 col-md-6 " style="margin-bottom:10px;" >
+                <div class="media-object-default">
+                    <div class="media">
+                        <div class="media-left"> <a href="@Url.Action("ChiTietSach","SachOnline", new { id = sach.MaSach })"> <img class="media-object imgsachbannhieu" src="~/Images/@sach.AnhBia" alt="placeholder image"> </a> </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="@Url.Action("ChiTietSach","SachOnline", new { id = sach.MaSach })">@sach.TenSach</a></h4>
+                            <div class="book-preview">
+                                @sach.MoTa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
+<hr>

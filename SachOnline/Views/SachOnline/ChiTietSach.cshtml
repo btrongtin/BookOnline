@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSach";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style type="text/css">
+    .tensach{
+        line-height: 40px;
+        border-radius: 8px;
+        height: 40px;
+        background-image: linear-gradient(to bottom right, #00ceff, #008074);
+        color: red;
+        margin-top: 0;
+        font-weight: bold;
+    }
+
+    .motasach{
+        text-align: justify;
+        padding: 20px 0 0 15px;
+    }
+
+    .groupcart{
+       width: fit-content;
+       margin-left: auto;
+       margin-right: 164px;
+       padding-bottom: 5px;
+       font-weight: bold;
+
+    }
+    .price{
+       font-size: 20px;
+       color: blue;
+       text-shadow: 0 0 1px #000;
+    }
+
+
+</style>
+
+<div class="row text-center">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <div class="thumbnail">
+            <h4 class="tensach">
+                @Model.TenSach
+            </h4>
+            <img src="~/Images/@Model.AnhBia" alt="@Model.TenSach"  class="img-responsive img-rounded imgbook" />
+
+            <div class="motasach">
+                <p>@Html.Raw(@Model.MoTa.Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))</p>
+            </div>
+            
+            <div class="groupcart">
+                <p class="ngaycapnhat">Ngày cập nhật: @Html.FormatValue(@Model.NgayCapNhat, "{0:dd/MM/yyyy}")</p>
+                <p class="giaban">Giá bán: <span class="price">@Html.FormatValue(@Model.GiaBan, "{0:#,##0}") VND</span></p>
+                <p class="addtocart">
+                    <a href="@Url.Action("AddToCart","ShoppingCart") new {id = @Model.MaSach}" class="btn btn-primary" role="button">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
