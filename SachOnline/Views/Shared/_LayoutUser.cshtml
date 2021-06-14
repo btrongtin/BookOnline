@@ -44,7 +44,7 @@
         <div class="container">
 
             @Html.Action("NavPartial", "SachOnline")
-
+            @Html.Action("GioHangPartial", "GioHang")
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-->
@@ -89,12 +89,20 @@
 
     </div>
     <footer class="container well" align="center">
-        <p>©2021 - Nhà sách ABC. Allright Reserved</p>
-        <p>Website được phát triển để sử dụng làm bài tập thực hành môn Lập trình Web</p>
-        <p>Email: abc@gmail.com</p>
-        <p>Bùi Trọng Tín</p>
-        <p>1924801030279</p>
-        <p>Email: btrongtin891@gmail.com</p>
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-6" style="text-align:center;">
+                <p>©2021 - Nhà sách ABC. Allright Reserved</p>
+                <p>Website được phát triển để sử dụng làm bài tập thực hành môn Lập trình Web</p>
+                <p>Email: abc@gmail.com</p>
+                <p>Bùi Trọng Tín</p>
+                <p>1924801030279</p>
+                <p>Email: btrongtin891@gmail.com</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-9 col-xs-6 foot">
+                <h5 style="color:red;">Số lượt truy cập: @ApplicationInstance.Application["HitCounter"]</h5>
+                <h5 style="color:red;">Số người online: @ApplicationInstance.Application["Online"]</h5>
+            </div>
+        </div>      
     </footer>
 </body>
 </html>

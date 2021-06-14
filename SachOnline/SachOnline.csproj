@@ -197,8 +197,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileAndEmailController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NhaXuatBanController.cs" />
     <Compile Include="Controllers\SachOnlineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,7 +213,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbSachOnline.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Mail.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -258,6 +263,7 @@
     <Content Include="Images\THCB.jpg" />
     <Content Include="Images\TiengAnh01.jpg" />
     <Content Include="Images\xehang.gif" />
+    <Content Include="LuotTruyCap.txt" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -328,6 +334,14 @@
     <Content Include="Views\SachOnline\SachTheoNhaXuatBan.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\NhaXuatBan\Index.cshtml" />
+    <Content Include="Views\NhaXuatBan\Details.cshtml" />
+    <Content Include="Views\NhaXuatBan\Edit.cshtml" />
+    <Content Include="Views\FileAndEmail\SendMail.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
